@@ -1,0 +1,6 @@
+C:\Users\josue\Desktop\AppInventarioVirtual\Modelo\bin\Release\Modelo.dll
+C:\Users\josue\Desktop\AppInventarioVirtual\Modelo\bin\Release\Modelo.pdb
+C:\Users\josue\Desktop\AppInventarioVirtual\Modelo\obj\Release\Modelo.csprojAssemblyReference.cache
+C:\Users\josue\Desktop\AppInventarioVirtual\Modelo\obj\Release\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\josue\Desktop\AppInventarioVirtual\Modelo\obj\Release\Modelo.dll
+C:\Users\josue\Desktop\AppInventarioVirtual\Modelo\obj\Release\Modelo.pdb

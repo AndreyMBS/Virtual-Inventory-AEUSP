@@ -1,0 +1,569 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{943186FB-167C-45E4-AFF5-7A37ACBF610B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppInventarioVirtual</RootNamespace>
+    <AssemblyName>AppInventarioVirtual</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="de.lkraemer.nemmet, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\de.lkraemer.nemmet.1.0.2\lib\netstandard2.0\de.lkraemer.nemmet.dll</HintPath>
+    </Reference>
+    <Reference Include="de.lkraemer.tagbuilder, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\de.lkraemer.tagbuilder.1.0.2\lib\netstandard2.0\de.lkraemer.tagbuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FrmConsulta-Aso.aspx" />
+    <Content Include="FrmConsultaEfectivo-PR.aspx" />
+    <Content Include="FrmConsultaFecha-SE.aspx" />
+    <Content Include="FrmConsultaGeneral-SE.aspx" />
+    <Content Include="FrmConsultarCol.aspx" />
+    <Content Include="FrmConsultarConsu-Ali.aspx" />
+    <Content Include="FrmConsultaSA.aspx" />
+    <Content Include="FrmConsultaTracto-PR.aspx" />
+    <Content Include="FrmConsultaUsuarios.aspx" />
+    <Content Include="FrmCreditos.aspx" />
+    <Content Include="FrmCuentaEfectivo.aspx" />
+    <Content Include="FrmDevolverColchones.aspx" />
+    <Content Include="FrmListaPrestamosColchones.aspx" />
+    <Content Include="FrmModEliConsumibles-Lim.aspx" />
+    <Content Include="FrmModulos.aspx" />
+    <Content Include="FrmPrincipal-Ali.aspx" />
+    <Content Include="FrmPrincipal-Lim.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="FrmPrincipalColchones.aspx" />
+    <Content Include="FrmPrincipalPR.aspx" />
+    <Content Include="FrmPrincipalSalud.aspx" />
+    <Content Include="FrmPrincipalUsuarios.aspx" />
+    <Content Include="FrmRegistrarBoleta-SA.aspx" />
+    <Content Include="FrmRegistroActivos-Asocia.aspx" />
+    <Content Include="FrmRegistroActivos-Lim.aspx" />
+    <Content Include="FrmConsulta-Lim.aspx" />
+    <Content Include="FrmEntregaActivos-Lim.aspx" />
+    <Content Include="FrmEntregaColchones.aspx" />
+    <Content Include="FrmRegistroColchones.aspx" />
+    <Content Include="FrmRegistroConsumibles-Ali.aspx" />
+    <Content Include="FrmRegistroConsumibles-Lim.aspx" />
+    <Content Include="FrmRegistroConsumibles-SA.aspx" />
+    <Content Include="FrmRegistroUsuarios.aspx" />
+    <Content Include="FrmSalidaActivos-Lim.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="FrmControlEstudiantes-SE.aspx" />
+    <Content Include="FrmPrincipalSE.aspx" />
+    <Content Include="FrmPrestamoColchones.aspx" />
+    <Content Include="FrmCuentaTracto.aspx" />
+    <Content Include="www\css\bootstrap.min.css" />
+    <Content Include="www\css\estilos.css" />
+    <Content Include="www\css\img\alimentacion\food.png" />
+    <Content Include="www\css\img\alimentacion\fruits.png" />
+    <Content Include="www\css\img\alimentacion\fast-food.png" />
+    <Content Include="www\css\img\alimentacion\451-512.png" />
+    <Content Include="www\css\img\asocia\013_news_newspaper_global_articles_feed-512.png" />
+    <Content Include="www\css\img\asocia\Group-512.png" />
+    <Content Include="www\css\img\asocia\iconfinder_Picture11_3289565.png" />
+    <Content Include="www\css\img\colchones\Bed-2-512.png" />
+    <Content Include="www\css\img\colchones\iconfinder_house-22_3940051.png" />
+    <Content Include="www\css\img\delete.png" />
+    <Content Include="www\css\img\limpieza\neat-512.png" />
+    <Content Include="www\css\img\presupuesto\001_money_cash_gold_wealth_income_safe_finance-512.png" />
+    <Content Include="www\css\img\presupuesto\007_money_finance_transaction_payment_terminal_card_shopping-512.png" />
+    <Content Include="www\css\img\presupuesto\010_card_receipt_money_shopping_finance_payment-512.png" />
+    <Content Include="www\css\img\presupuesto\iconfinder_business_finance_money-03_2784288.png" />
+    <Content Include="www\css\img\salud\004_082_hospital_bed_medicine_treatment_2-512.png" />
+    <Content Include="www\css\img\salud\014-512.png" />
+    <Content Include="www\css\img\salud\14-512.png" />
+    <Content Include="www\css\img\salud\iconfinder_50_3678411.png" />
+    <Content Include="www\css\img\salud\medical_history-512.png" />
+    <Content Include="www\css\img\seguridad\candado.png" />
+    <Content Include="www\css\img\alimentacion\iconfinder_97_171456.png" />
+    <Content Include="www\css\img\limpieza\soap.png" />
+    <Content Include="www\css\img\limpieza\tissue-paper.png" />
+    <Content Include="www\css\img\logoME.png" />
+    <Content Include="www\css\img\seguridad\security2.png" />
+    <Content Include="www\css\img\seguridad\shield-512.png" />
+    <Content Include="www\css\img\usuarios\photo_2019-11-06_01-58-57.jpg" />
+    <Content Include="www\css\img\usuarios\photo_2019-11-06_01-59-02.jpg" />
+    <Content Include="www\css\mdb.min.css" />
+    <Content Include="www\css\style.css" />
+    <Content Include="www\js\jquery-3.4.1.min.js" />
+    <Content Include="www\js\mdb.min.js" />
+    <Content Include="www\js\bootstrap.min.js" />
+    <Content Include="www\js\popper.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmConsulta-Aso.aspx.cs">
+      <DependentUpon>FrmConsulta-Aso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmConsulta-Aso.aspx.designer.cs">
+      <DependentUpon>FrmConsulta-Aso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultaEfectivo-PR.aspx.cs">
+      <DependentUpon>FrmConsultaEfectivo-PR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaEfectivo-PR.aspx.designer.cs">
+      <DependentUpon>FrmConsultaEfectivo-PR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultaFecha-SE.aspx.cs">
+      <DependentUpon>FrmConsultaFecha-SE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaFecha-SE.aspx.designer.cs">
+      <DependentUpon>FrmConsultaFecha-SE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultaGeneral-SE.aspx.cs">
+      <DependentUpon>FrmConsultaGeneral-SE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaGeneral-SE.aspx.designer.cs">
+      <DependentUpon>FrmConsultaGeneral-SE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultarCol.aspx.cs">
+      <DependentUpon>FrmConsultarCol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmConsultarCol.aspx.designer.cs">
+      <DependentUpon>FrmConsultarCol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultarConsu-Ali.aspx.cs">
+      <DependentUpon>FrmConsultarConsu-Ali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmConsultarConsu-Ali.aspx.designer.cs">
+      <DependentUpon>FrmConsultarConsu-Ali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultaSA.aspx.cs">
+      <DependentUpon>FrmConsultaSA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaSA.aspx.designer.cs">
+      <DependentUpon>FrmConsultaSA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultaTracto-PR.aspx.cs">
+      <DependentUpon>FrmConsultaTracto-PR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaTracto-PR.aspx.designer.cs">
+      <DependentUpon>FrmConsultaTracto-PR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultaUsuarios.aspx.cs">
+      <DependentUpon>FrmConsultaUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaUsuarios.aspx.designer.cs">
+      <DependentUpon>FrmConsultaUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreditos.aspx.cs">
+      <DependentUpon>FrmCreditos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmCreditos.aspx.designer.cs">
+      <DependentUpon>FrmCreditos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCuentaEfectivo.aspx.cs">
+      <DependentUpon>FrmCuentaEfectivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmCuentaEfectivo.aspx.designer.cs">
+      <DependentUpon>FrmCuentaEfectivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDevolverColchones.aspx.cs">
+      <DependentUpon>FrmDevolverColchones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmDevolverColchones.aspx.designer.cs">
+      <DependentUpon>FrmDevolverColchones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListaPrestamosColchones.aspx.cs">
+      <DependentUpon>FrmListaPrestamosColchones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmListaPrestamosColchones.aspx.designer.cs">
+      <DependentUpon>FrmListaPrestamosColchones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModEliConsumibles-Lim.aspx.cs">
+      <DependentUpon>FrmModEliConsumibles-Lim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmModEliConsumibles-Lim.aspx.designer.cs">
+      <DependentUpon>FrmModEliConsumibles-Lim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModulos.aspx.cs">
+      <DependentUpon>FrmModulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmModulos.aspx.designer.cs">
+      <DependentUpon>FrmModulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal-Ali.aspx.cs">
+      <DependentUpon>FrmPrincipal-Ali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal-Ali.aspx.designer.cs">
+      <DependentUpon>FrmPrincipal-Ali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal-Lim.aspx.cs">
+      <DependentUpon>FrmPrincipal-Lim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal-Lim.aspx.designer.cs">
+      <DependentUpon>FrmPrincipal-Lim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalColchones.aspx.cs">
+      <DependentUpon>FrmPrincipalColchones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalColchones.aspx.designer.cs">
+      <DependentUpon>FrmPrincipalColchones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalPR.aspx.cs">
+      <DependentUpon>FrmPrincipalPR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalPR.aspx.designer.cs">
+      <DependentUpon>FrmPrincipalPR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalSalud.aspx.cs">
+      <DependentUpon>FrmPrincipalSalud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalSalud.aspx.designer.cs">
+      <DependentUpon>FrmPrincipalSalud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalUsuarios.aspx.cs">
+      <DependentUpon>FrmPrincipalUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalUsuarios.aspx.designer.cs">
+      <DependentUpon>FrmPrincipalUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistrarBoleta-SA.aspx.cs">
+      <DependentUpon>FrmRegistrarBoleta-SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarBoleta-SA.aspx.designer.cs">
+      <DependentUpon>FrmRegistrarBoleta-SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroActivos-Asocia.aspx.cs">
+      <DependentUpon>FrmRegistroActivos-Asocia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroActivos-Asocia.aspx.designer.cs">
+      <DependentUpon>FrmRegistroActivos-Asocia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroActivos-Lim.aspx.cs">
+      <DependentUpon>FrmRegistroActivos-Lim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroActivos-Lim.aspx.designer.cs">
+      <DependentUpon>FrmRegistroActivos-Lim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsulta-Lim.aspx.cs">
+      <DependentUpon>FrmConsulta-Lim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmConsulta-Lim.aspx.designer.cs">
+      <DependentUpon>FrmConsulta-Lim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEntregaActivos-Lim.aspx.cs">
+      <DependentUpon>FrmEntregaActivos-Lim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmEntregaActivos-Lim.aspx.designer.cs">
+      <DependentUpon>FrmEntregaActivos-Lim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEntregaColchones.aspx.cs">
+      <DependentUpon>FrmEntregaColchones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmEntregaColchones.aspx.designer.cs">
+      <DependentUpon>FrmEntregaColchones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroColchones.aspx.cs">
+      <DependentUpon>FrmRegistroColchones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroColchones.aspx.designer.cs">
+      <DependentUpon>FrmRegistroColchones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroConsumibles-Ali.aspx.cs">
+      <DependentUpon>FrmRegistroConsumibles-Ali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroConsumibles-Ali.aspx.designer.cs">
+      <DependentUpon>FrmRegistroConsumibles-Ali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroConsumibles-Lim.aspx.cs">
+      <DependentUpon>FrmRegistroConsumibles-Lim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroConsumibles-Lim.aspx.designer.cs">
+      <DependentUpon>FrmRegistroConsumibles-Lim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroConsumibles-SA.aspx.cs">
+      <DependentUpon>FrmRegistroConsumibles-SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroConsumibles-SA.aspx.designer.cs">
+      <DependentUpon>FrmRegistroConsumibles-SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroUsuarios.aspx.cs">
+      <DependentUpon>FrmRegistroUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroUsuarios.aspx.designer.cs">
+      <DependentUpon>FrmRegistroUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSalidaActivos-Lim.aspx.cs">
+      <DependentUpon>FrmSalidaActivos-Lim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmSalidaActivos-Lim.aspx.designer.cs">
+      <DependentUpon>FrmSalidaActivos-Lim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ME-Alimentacion.Master.cs">
+      <DependentUpon>ME-Alimentacion.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ME-Alimentacion.Master.designer.cs">
+      <DependentUpon>ME-Alimentacion.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ME-Asocia.Master.cs">
+      <DependentUpon>ME-Asocia.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ME-Asocia.Master.designer.cs">
+      <DependentUpon>ME-Asocia.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ME-Inventario.Master.cs">
+      <DependentUpon>ME-Inventario.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ME-Inventario.Master.designer.cs">
+      <DependentUpon>ME-Inventario.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ME-Limpieza.Master.cs">
+      <DependentUpon>ME-Limpieza.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ME-Limpieza.Master.designer.cs">
+      <DependentUpon>ME-Limpieza.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ME-Salud.Master.cs">
+      <DependentUpon>ME-Salud.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ME-Salud.Master.designer.cs">
+      <DependentUpon>ME-Salud.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ME-Seguridad.Master.cs">
+      <DependentUpon>ME-Seguridad.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ME-Seguridad.Master.designer.cs">
+      <DependentUpon>ME-Seguridad.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FrmControlEstudiantes-SE.aspx.cs">
+      <DependentUpon>FrmControlEstudiantes-SE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmControlEstudiantes-SE.aspx.designer.cs">
+      <DependentUpon>FrmControlEstudiantes-SE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalSE.aspx.cs">
+      <DependentUpon>FrmPrincipalSE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalSE.aspx.designer.cs">
+      <DependentUpon>FrmPrincipalSE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrestamoColchones.aspx.cs">
+      <DependentUpon>FrmPrestamoColchones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmPrestamoColchones.aspx.designer.cs">
+      <DependentUpon>FrmPrestamoColchones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ME-Usuarios.Master.cs">
+      <DependentUpon>ME-Usuarios.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ME-Usuarios.Master.designer.cs">
+      <DependentUpon>ME-Usuarios.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ME-Presupuesto.Master.cs">
+      <DependentUpon>ME-Presupuesto.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ME-Presupuesto.Master.designer.cs">
+      <DependentUpon>ME-Presupuesto.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCuentaTracto.aspx.cs">
+      <DependentUpon>FrmCuentaTracto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmCuentaTracto.aspx.designer.cs">
+      <DependentUpon>FrmCuentaTracto.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ME-Inventario.Master" />
+    <Content Include="ME-Limpieza.Master" />
+    <Content Include="ME-Alimentacion.Master" />
+    <Content Include="ME-Salud.Master" />
+    <Content Include="ME-Asocia.Master" />
+    <None Include="packages.config" />
+    <Content Include="ME-Seguridad.Master" />
+    <Content Include="ME-Usuarios.Master" />
+    <Content Include="ME-Presupuesto.Master" />
+    <Content Include="Principal.Master" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{25f3893b-a7b0-436b-bc54-8a13165ee1c5}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{DE6317D6-21BB-4B59-BBF1-7A1084B9C9E0}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57181</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57181/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

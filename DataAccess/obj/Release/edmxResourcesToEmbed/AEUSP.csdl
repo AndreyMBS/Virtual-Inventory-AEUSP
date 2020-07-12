@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ucraeuspModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbActivo">
+    <Key>
+      <PropertyRef Name="idActivo" />
+    </Key>
+    <Property Name="idActivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigoOrganismo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cantidadTotal" Type="Int32" Nullable="false" />
+    <Property Name="cantidadInventario" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbOrganismo" Relationship="Self.FK__tbActivo__codigo__182C9B23" FromRole="tbActivo" ToRole="tbOrganismo" />
+    <NavigationProperty Name="tbActivoGeneral" Relationship="Self.FK__tbActivoG__idAct__1DE57479" FromRole="tbActivo" ToRole="tbActivoGeneral" />
+    <NavigationProperty Name="tbColchon" Relationship="Self.FK__tbColchon__idAct__1B0907CE" FromRole="tbActivo" ToRole="tbColchon" />
+    <NavigationProperty Name="tbDetalleMovimientoActivos" Relationship="Self.FK__tbDetalle__idAct__2A4B4B5E" FromRole="tbActivo" ToRole="tbDetalleMovimientoActivos" />
+  </EntityType>
+  <EntityType Name="tbActivoGeneral">
+    <Key>
+      <PropertyRef Name="placa" />
+    </Key>
+    <Property Name="placa" Type="Int32" Nullable="false" />
+    <Property Name="idActivo" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ubicacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbActivo" Relationship="Self.FK__tbActivoG__idAct__1DE57479" FromRole="tbActivoGeneral" ToRole="tbActivo" />
+  </EntityType>
+  <EntityType Name="tbAsistente">
+    <Key>
+      <PropertyRef Name="cedula" />
+    </Key>
+    <Property Name="cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombreCompleto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="Int32" />
+    <NavigationProperty Name="tbBoletaMedica" Relationship="Self.FK__tbBoletaM__cedul__4222D4EF" FromRole="tbAsistente" ToRole="tbBoletaMedica" />
+    <NavigationProperty Name="tbEstudiante" Relationship="Self.FK__tbEstudia__cedul__22AA2996" FromRole="tbAsistente" ToRole="tbEstudiante" />
+    <NavigationProperty Name="tbMovimientoActivo" Relationship="Self.FK__tbMovimie__cedul__267ABA7A" FromRole="tbAsistente" ToRole="tbMovimientoActivo" />
+    <NavigationProperty Name="tbMovimientoAsistencia" Relationship="Self.FK__tbMovimie__cedul__35BCFE0A" FromRole="tbAsistente" ToRole="tbMovimientoAsistencia" />
+  </EntityType>
+  <EntityType Name="tbBoletaMedica">
+    <Key>
+      <PropertyRef Name="numeroBoleta" />
+    </Key>
+    <Property Name="numeroBoleta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cedulaAsistente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="carnetUsuario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="tratamiento" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="tbAsistente" Relationship="Self.FK__tbBoletaM__cedul__4222D4EF" FromRole="tbBoletaMedica" ToRole="tbAsistente" />
+    <NavigationProperty Name="tbUsuario" Relationship="Self.FK__tbBoletaM__carne__4316F928" FromRole="tbBoletaMedica" ToRole="tbUsuario" />
+    <NavigationProperty Name="tbSuministrosBoleta" Relationship="Self.FK__tbSuminis__numer__45F365D3" FromRole="tbBoletaMedica" ToRole="tbSuministrosBoleta" />
+  </EntityType>
+  <EntityType Name="tbColchon">
+    <Key>
+      <PropertyRef Name="numeroColchon" />
+    </Key>
+    <Property Name="numeroColchon" Type="Int32" Nullable="false" />
+    <Property Name="idActivo" Type="Int32" Nullable="false" />
+    <Property Name="procedencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbActivo" Relationship="Self.FK__tbColchon__idAct__1B0907CE" FromRole="tbColchon" ToRole="tbActivo" />
+  </EntityType>
+  <EntityType Name="tbConsumible">
+    <Key>
+      <PropertyRef Name="idConsumible" />
+    </Key>
+    <Property Name="idConsumible" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigoOrganismo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="inventario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbOrganismo" Relationship="Self.FK__tbConsumi__codig__2D27B809" FromRole="tbConsumible" ToRole="tbOrganismo" />
+    <NavigationProperty Name="tbConsumibleAlimentacion" Relationship="Self.FK__tbConsumi__idCon__300424B4" FromRole="tbConsumible" ToRole="tbConsumibleAlimentacion" />
+    <NavigationProperty Name="tbConsumibleSalud" Relationship="Self.FK__tbConsumi__idCon__32E0915F" FromRole="tbConsumible" ToRole="tbConsumibleSalud" />
+  </EntityType>
+  <EntityType Name="tbConsumibleAlimentacion">
+    <Key>
+      <PropertyRef Name="idAlimentacion" />
+    </Key>
+    <Property Name="idAlimentacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idConsumible" Type="Int32" Nullable="false" />
+    <Property Name="categoria" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="unidadMedida" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbConsumible" Relationship="Self.FK__tbConsumi__idCon__300424B4" FromRole="tbConsumibleAlimentacion" ToRole="tbConsumible" />
+  </EntityType>
+  <EntityType Name="tbConsumibleSalud">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idConsumible" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbConsumible" Relationship="Self.FK__tbConsumi__idCon__32E0915F" FromRole="tbConsumibleSalud" ToRole="tbConsumible" />
+    <NavigationProperty Name="tbSuministrosBoleta" Relationship="Self.FK__tbSuminis__codig__46E78A0C" FromRole="tbConsumibleSalud" ToRole="tbSuministrosBoleta" />
+  </EntityType>
+  <EntityType Name="tbCuenta">
+    <Key>
+      <PropertyRef Name="idCuenta" />
+    </Key>
+    <Property Name="idCuenta" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="nombreCuenta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monto" Type="Decimal" Precision="9" Scale="2" />
+    <NavigationProperty Name="tbMovimientoCuenta" Relationship="Self.FK__tbMovimie__idCue__3A81B327" FromRole="tbCuenta" ToRole="tbMovimientoCuenta" />
+  </EntityType>
+  <EntityType Name="tbDetalleMovimientoActivos">
+    <Key>
+      <PropertyRef Name="idMovimiento" />
+      <PropertyRef Name="idActivo" />
+    </Key>
+    <Property Name="idMovimiento" Type="Int32" Nullable="false" />
+    <Property Name="idActivo" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="ubicacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbActivo" Relationship="Self.FK__tbDetalle__idAct__2A4B4B5E" FromRole="tbDetalleMovimientoActivos" ToRole="tbActivo" />
+    <NavigationProperty Name="tbMovimientoActivo" Relationship="Self.FK__tbDetalle__idMov__29572725" FromRole="tbDetalleMovimientoActivos" ToRole="tbMovimientoActivo" />
+  </EntityType>
+  <EntityType Name="tbEstudiante">
+    <Key>
+      <PropertyRef Name="cedula" />
+      <PropertyRef Name="carnet" />
+    </Key>
+    <Property Name="cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="carnet" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="carrera" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbAsistente" Relationship="Self.FK__tbEstudia__cedul__22AA2996" FromRole="tbEstudiante" ToRole="tbAsistente" />
+  </EntityType>
+  <EntityType Name="tbMovimientoActivo">
+    <Key>
+      <PropertyRef Name="idMovimiento" />
+    </Key>
+    <Property Name="idMovimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="carnetUsuario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cedulaAsistente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="tipo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="tbAsistente" Relationship="Self.FK__tbMovimie__cedul__267ABA7A" FromRole="tbMovimientoActivo" ToRole="tbAsistente" />
+    <NavigationProperty Name="tbDetalleMovimientoActivos" Relationship="Self.FK__tbDetalle__idMov__29572725" FromRole="tbMovimientoActivo" ToRole="tbDetalleMovimientoActivos" />
+    <NavigationProperty Name="tbUsuario" Relationship="Self.FK__tbMovimie__carne__25869641" FromRole="tbMovimientoActivo" ToRole="tbUsuario" />
+  </EntityType>
+  <EntityType Name="tbMovimientoAsistencia">
+    <Key>
+      <PropertyRef Name="idMovimiento" />
+    </Key>
+    <Property Name="idMovimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cedulaAsistente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="accion" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbAsistente" Relationship="Self.FK__tbMovimie__cedul__35BCFE0A" FromRole="tbMovimientoAsistencia" ToRole="tbAsistente" />
+  </EntityType>
+  <EntityType Name="tbMovimientoCuenta">
+    <Key>
+      <PropertyRef Name="idMovimiento" />
+    </Key>
+    <Property Name="idMovimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCuenta" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="carnetUsuario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="detalle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="monto" Type="Decimal" Precision="9" Scale="2" />
+    <NavigationProperty Name="tbCuenta" Relationship="Self.FK__tbMovimie__idCue__3A81B327" FromRole="tbMovimientoCuenta" ToRole="tbCuenta" />
+    <NavigationProperty Name="tbUsuario" Relationship="Self.FK__tbMovimie__carne__3B75D760" FromRole="tbMovimientoCuenta" ToRole="tbUsuario" />
+    <NavigationProperty Name="tbMovimientoCuentaTracto" Relationship="Self.FK__tbMovimie__idMov__3E52440B" FromRole="tbMovimientoCuenta" ToRole="tbMovimientoCuentaTracto" />
+  </EntityType>
+  <EntityType Name="tbMovimientoCuentaTracto">
+    <Key>
+      <PropertyRef Name="idMovimiento" />
+    </Key>
+    <Property Name="idMovimiento" Type="Int32" Nullable="false" />
+    <Property Name="numeroFactura" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="empresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbMovimientoCuenta" Relationship="Self.FK__tbMovimie__idMov__3E52440B" FromRole="tbMovimientoCuentaTracto" ToRole="tbMovimientoCuenta" />
+  </EntityType>
+  <EntityType Name="tbOrganismo">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbActivo" Relationship="Self.FK__tbActivo__codigo__182C9B23" FromRole="tbOrganismo" ToRole="tbActivo" />
+    <NavigationProperty Name="tbConsumible" Relationship="Self.FK__tbConsumi__codig__2D27B809" FromRole="tbOrganismo" ToRole="tbConsumible" />
+    <NavigationProperty Name="tbUsuario" Relationship="Self.tbOrganismoUsuario" FromRole="tbOrganismo" ToRole="tbUsuario" />
+  </EntityType>
+  <EntityType Name="tbSuministrosBoleta">
+    <Key>
+      <PropertyRef Name="numeroBoleta" />
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="numeroBoleta" Type="Int32" Nullable="false" />
+    <Property Name="codigo" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbBoletaMedica" Relationship="Self.FK__tbSuminis__numer__45F365D3" FromRole="tbSuministrosBoleta" ToRole="tbBoletaMedica" />
+    <NavigationProperty Name="tbConsumibleSalud" Relationship="Self.FK__tbSuminis__codig__46E78A0C" FromRole="tbSuministrosBoleta" ToRole="tbConsumibleSalud" />
+  </EntityType>
+  <EntityType Name="tbUsuario">
+    <Key>
+      <PropertyRef Name="carnet" />
+    </Key>
+    <Property Name="carnet" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombreCompleto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="clave" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbBoletaMedica" Relationship="Self.FK__tbBoletaM__carne__4316F928" FromRole="tbUsuario" ToRole="tbBoletaMedica" />
+    <NavigationProperty Name="tbMovimientoActivo" Relationship="Self.FK__tbMovimie__carne__25869641" FromRole="tbUsuario" ToRole="tbMovimientoActivo" />
+    <NavigationProperty Name="tbMovimientoCuenta" Relationship="Self.FK__tbMovimie__carne__3B75D760" FromRole="tbUsuario" ToRole="tbMovimientoCuenta" />
+    <NavigationProperty Name="tbOrganismo" Relationship="Self.tbOrganismoUsuario" FromRole="tbUsuario" ToRole="tbOrganismo" />
+  </EntityType>
+  <EntityType Name="VP_CNS_CEDULAS">
+    <Key>
+      <PropertyRef Name="cedula" />
+    </Key>
+    <Property Name="cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VP_CNS_COMISIONES">
+    <Key>
+      <PropertyRef Name="carnet" />
+      <PropertyRef Name="cedula" />
+      <PropertyRef Name="nombreCompleto" />
+      <PropertyRef Name="nombre" />
+    </Key>
+    <Property Name="carnet" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombreCompleto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VP_CNS_NUMEROCOLCHONESDISPONIBLES">
+    <Key>
+      <PropertyRef Name="numeroColchon" />
+    </Key>
+    <Property Name="numeroColchon" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__tbActivo__codigo__182C9B23">
+    <End Role="tbOrganismo" Type="Self.tbOrganismo" Multiplicity="1" />
+    <End Role="tbActivo" Type="Self.tbActivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbOrganismo">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tbActivo">
+        <PropertyRef Name="codigoOrganismo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbActivoG__idAct__1DE57479">
+    <End Role="tbActivo" Type="Self.tbActivo" Multiplicity="1" />
+    <End Role="tbActivoGeneral" Type="Self.tbActivoGeneral" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbActivo">
+        <PropertyRef Name="idActivo" />
+      </Principal>
+      <Dependent Role="tbActivoGeneral">
+        <PropertyRef Name="idActivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbColchon__idAct__1B0907CE">
+    <End Role="tbActivo" Type="Self.tbActivo" Multiplicity="1" />
+    <End Role="tbColchon" Type="Self.tbColchon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbActivo">
+        <PropertyRef Name="idActivo" />
+      </Principal>
+      <Dependent Role="tbColchon">
+        <PropertyRef Name="idActivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbDetalle__idAct__2A4B4B5E">
+    <End Role="tbActivo" Type="Self.tbActivo" Multiplicity="1" />
+    <End Role="tbDetalleMovimientoActivos" Type="Self.tbDetalleMovimientoActivos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbActivo">
+        <PropertyRef Name="idActivo" />
+      </Principal>
+      <Dependent Role="tbDetalleMovimientoActivos">
+        <PropertyRef Name="idActivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbBoletaM__cedul__4222D4EF">
+    <End Role="tbAsistente" Type="Self.tbAsistente" Multiplicity="1" />
+    <End Role="tbBoletaMedica" Type="Self.tbBoletaMedica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbAsistente">
+        <PropertyRef Name="cedula" />
+      </Principal>
+      <Dependent Role="tbBoletaMedica">
+        <PropertyRef Name="cedulaAsistente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbEstudia__cedul__22AA2996">
+    <End Role="tbAsistente" Type="Self.tbAsistente" Multiplicity="1" />
+    <End Role="tbEstudiante" Type="Self.tbEstudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbAsistente">
+        <PropertyRef Name="cedula" />
+      </Principal>
+      <Dependent Role="tbEstudiante">
+        <PropertyRef Name="cedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbMovimie__cedul__267ABA7A">
+    <End Role="tbAsistente" Type="Self.tbAsistente" Multiplicity="1" />
+    <End Role="tbMovimientoActivo" Type="Self.tbMovimientoActivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbAsistente">
+        <PropertyRef Name="cedula" />
+      </Principal>
+      <Dependent Role="tbMovimientoActivo">
+        <PropertyRef Name="cedulaAsistente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbMovimie__cedul__35BCFE0A">
+    <End Role="tbAsistente" Type="Self.tbAsistente" Multiplicity="1" />
+    <End Role="tbMovimientoAsistencia" Type="Self.tbMovimientoAsistencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbAsistente">
+        <PropertyRef Name="cedula" />
+      </Principal>
+      <Dependent Role="tbMovimientoAsistencia">
+        <PropertyRef Name="cedulaAsistente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbBoletaM__carne__4316F928">
+    <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="1" />
+    <End Role="tbBoletaMedica" Type="Self.tbBoletaMedica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuario">
+        <PropertyRef Name="carnet" />
+      </Principal>
+      <Dependent Role="tbBoletaMedica">
+        <PropertyRef Name="carnetUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbSuminis__numer__45F365D3">
+    <End Role="tbBoletaMedica" Type="Self.tbBoletaMedica" Multiplicity="1" />
+    <End Role="tbSuministrosBoleta" Type="Self.tbSuministrosBoleta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbBoletaMedica">
+        <PropertyRef Name="numeroBoleta" />
+      </Principal>
+      <Dependent Role="tbSuministrosBoleta">
+        <PropertyRef Name="numeroBoleta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbConsumi__codig__2D27B809">
+    <End Role="tbOrganismo" Type="Self.tbOrganismo" Multiplicity="1" />
+    <End Role="tbConsumible" Type="Self.tbConsumible" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbOrganismo">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tbConsumible">
+        <PropertyRef Name="codigoOrganismo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbConsumi__idCon__300424B4">
+    <End Role="tbConsumible" Type="Self.tbConsumible" Multiplicity="1" />
+    <End Role="tbConsumibleAlimentacion" Type="Self.tbConsumibleAlimentacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbConsumible">
+        <PropertyRef Name="idConsumible" />
+      </Principal>
+      <Dependent Role="tbConsumibleAlimentacion">
+        <PropertyRef Name="idConsumible" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbConsumi__idCon__32E0915F">
+    <End Role="tbConsumible" Type="Self.tbConsumible" Multiplicity="1" />
+    <End Role="tbConsumibleSalud" Type="Self.tbConsumibleSalud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbConsumible">
+        <PropertyRef Name="idConsumible" />
+      </Principal>
+      <Dependent Role="tbConsumibleSalud">
+        <PropertyRef Name="idConsumible" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbSuminis__codig__46E78A0C">
+    <End Role="tbConsumibleSalud" Type="Self.tbConsumibleSalud" Multiplicity="1" />
+    <End Role="tbSuministrosBoleta" Type="Self.tbSuministrosBoleta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbConsumibleSalud">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tbSuministrosBoleta">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbMovimie__idCue__3A81B327">
+    <End Role="tbCuenta" Type="Self.tbCuenta" Multiplicity="1" />
+    <End Role="tbMovimientoCuenta" Type="Self.tbMovimientoCuenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCuenta">
+        <PropertyRef Name="idCuenta" />
+      </Principal>
+      <Dependent Role="tbMovimientoCuenta">
+        <PropertyRef Name="idCuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbDetalle__idMov__29572725">
+    <End Role="tbMovimientoActivo" Type="Self.tbMovimientoActivo" Multiplicity="1" />
+    <End Role="tbDetalleMovimientoActivos" Type="Self.tbDetalleMovimientoActivos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMovimientoActivo">
+        <PropertyRef Name="idMovimiento" />
+      </Principal>
+      <Dependent Role="tbDetalleMovimientoActivos">
+        <PropertyRef Name="idMovimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbMovimie__carne__25869641">
+    <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="1" />
+    <End Role="tbMovimientoActivo" Type="Self.tbMovimientoActivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuario">
+        <PropertyRef Name="carnet" />
+      </Principal>
+      <Dependent Role="tbMovimientoActivo">
+        <PropertyRef Name="carnetUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbMovimie__carne__3B75D760">
+    <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="1" />
+    <End Role="tbMovimientoCuenta" Type="Self.tbMovimientoCuenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuario">
+        <PropertyRef Name="carnet" />
+      </Principal>
+      <Dependent Role="tbMovimientoCuenta">
+        <PropertyRef Name="carnetUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbMovimie__idMov__3E52440B">
+    <End Role="tbMovimientoCuenta" Type="Self.tbMovimientoCuenta" Multiplicity="1" />
+    <End Role="tbMovimientoCuentaTracto" Type="Self.tbMovimientoCuentaTracto" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbMovimientoCuenta">
+        <PropertyRef Name="idMovimiento" />
+      </Principal>
+      <Dependent Role="tbMovimientoCuentaTracto">
+        <PropertyRef Name="idMovimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tbOrganismoUsuario">
+    <End Role="tbOrganismo" Type="Self.tbOrganismo" Multiplicity="*" />
+    <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="AEUSP" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbActivo" EntityType="Self.tbActivo" />
+    <EntitySet Name="tbActivoGeneral" EntityType="Self.tbActivoGeneral" />
+    <EntitySet Name="tbAsistente" EntityType="Self.tbAsistente" />
+    <EntitySet Name="tbBoletaMedica" EntityType="Self.tbBoletaMedica" />
+    <EntitySet Name="tbColchon" EntityType="Self.tbColchon" />
+    <EntitySet Name="tbConsumible" EntityType="Self.tbConsumible" />
+    <EntitySet Name="tbConsumibleAlimentacion" EntityType="Self.tbConsumibleAlimentacion" />
+    <EntitySet Name="tbConsumibleSalud" EntityType="Self.tbConsumibleSalud" />
+    <EntitySet Name="tbCuenta" EntityType="Self.tbCuenta" />
+    <EntitySet Name="tbDetalleMovimientoActivos" EntityType="Self.tbDetalleMovimientoActivos" />
+    <EntitySet Name="tbEstudiante" EntityType="Self.tbEstudiante" />
+    <EntitySet Name="tbMovimientoActivo" EntityType="Self.tbMovimientoActivo" />
+    <EntitySet Name="tbMovimientoAsistencia" EntityType="Self.tbMovimientoAsistencia" />
+    <EntitySet Name="tbMovimientoCuenta" EntityType="Self.tbMovimientoCuenta" />
+    <EntitySet Name="tbMovimientoCuentaTracto" EntityType="Self.tbMovimientoCuentaTracto" />
+    <EntitySet Name="tbOrganismo" EntityType="Self.tbOrganismo" />
+    <EntitySet Name="tbSuministrosBoleta" EntityType="Self.tbSuministrosBoleta" />
+    <EntitySet Name="tbUsuario" EntityType="Self.tbUsuario" />
+    <EntitySet Name="VP_CNS_CEDULAS" EntityType="Self.VP_CNS_CEDULAS" />
+    <EntitySet Name="VP_CNS_COMISIONES" EntityType="Self.VP_CNS_COMISIONES" />
+    <EntitySet Name="VP_CNS_NUMEROCOLCHONESDISPONIBLES" EntityType="Self.VP_CNS_NUMEROCOLCHONESDISPONIBLES" />
+    <AssociationSet Name="FK__tbActivo__codigo__182C9B23" Association="Self.FK__tbActivo__codigo__182C9B23">
+      <End Role="tbOrganismo" EntitySet="tbOrganismo" />
+      <End Role="tbActivo" EntitySet="tbActivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbActivoG__idAct__1DE57479" Association="Self.FK__tbActivoG__idAct__1DE57479">
+      <End Role="tbActivo" EntitySet="tbActivo" />
+      <End Role="tbActivoGeneral" EntitySet="tbActivoGeneral" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbColchon__idAct__1B0907CE" Association="Self.FK__tbColchon__idAct__1B0907CE">
+      <End Role="tbActivo" EntitySet="tbActivo" />
+      <End Role="tbColchon" EntitySet="tbColchon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbDetalle__idAct__2A4B4B5E" Association="Self.FK__tbDetalle__idAct__2A4B4B5E">
+      <End Role="tbActivo" EntitySet="tbActivo" />
+      <End Role="tbDetalleMovimientoActivos" EntitySet="tbDetalleMovimientoActivos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbBoletaM__cedul__4222D4EF" Association="Self.FK__tbBoletaM__cedul__4222D4EF">
+      <End Role="tbAsistente" EntitySet="tbAsistente" />
+      <End Role="tbBoletaMedica" EntitySet="tbBoletaMedica" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbEstudia__cedul__22AA2996" Association="Self.FK__tbEstudia__cedul__22AA2996">
+      <End Role="tbAsistente" EntitySet="tbAsistente" />
+      <End Role="tbEstudiante" EntitySet="tbEstudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbMovimie__cedul__267ABA7A" Association="Self.FK__tbMovimie__cedul__267ABA7A">
+      <End Role="tbAsistente" EntitySet="tbAsistente" />
+      <End Role="tbMovimientoActivo" EntitySet="tbMovimientoActivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbMovimie__cedul__35BCFE0A" Association="Self.FK__tbMovimie__cedul__35BCFE0A">
+      <End Role="tbAsistente" EntitySet="tbAsistente" />
+      <End Role="tbMovimientoAsistencia" EntitySet="tbMovimientoAsistencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbBoletaM__carne__4316F928" Association="Self.FK__tbBoletaM__carne__4316F928">
+      <End Role="tbUsuario" EntitySet="tbUsuario" />
+      <End Role="tbBoletaMedica" EntitySet="tbBoletaMedica" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbSuminis__numer__45F365D3" Association="Self.FK__tbSuminis__numer__45F365D3">
+      <End Role="tbBoletaMedica" EntitySet="tbBoletaMedica" />
+      <End Role="tbSuministrosBoleta" EntitySet="tbSuministrosBoleta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbConsumi__codig__2D27B809" Association="Self.FK__tbConsumi__codig__2D27B809">
+      <End Role="tbOrganismo" EntitySet="tbOrganismo" />
+      <End Role="tbConsumible" EntitySet="tbConsumible" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbConsumi__idCon__300424B4" Association="Self.FK__tbConsumi__idCon__300424B4">
+      <End Role="tbConsumible" EntitySet="tbConsumible" />
+      <End Role="tbConsumibleAlimentacion" EntitySet="tbConsumibleAlimentacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbConsumi__idCon__32E0915F" Association="Self.FK__tbConsumi__idCon__32E0915F">
+      <End Role="tbConsumible" EntitySet="tbConsumible" />
+      <End Role="tbConsumibleSalud" EntitySet="tbConsumibleSalud" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbSuminis__codig__46E78A0C" Association="Self.FK__tbSuminis__codig__46E78A0C">
+      <End Role="tbConsumibleSalud" EntitySet="tbConsumibleSalud" />
+      <End Role="tbSuministrosBoleta" EntitySet="tbSuministrosBoleta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbMovimie__idCue__3A81B327" Association="Self.FK__tbMovimie__idCue__3A81B327">
+      <End Role="tbCuenta" EntitySet="tbCuenta" />
+      <End Role="tbMovimientoCuenta" EntitySet="tbMovimientoCuenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbDetalle__idMov__29572725" Association="Self.FK__tbDetalle__idMov__29572725">
+      <End Role="tbMovimientoActivo" EntitySet="tbMovimientoActivo" />
+      <End Role="tbDetalleMovimientoActivos" EntitySet="tbDetalleMovimientoActivos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbMovimie__carne__25869641" Association="Self.FK__tbMovimie__carne__25869641">
+      <End Role="tbUsuario" EntitySet="tbUsuario" />
+      <End Role="tbMovimientoActivo" EntitySet="tbMovimientoActivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbMovimie__carne__3B75D760" Association="Self.FK__tbMovimie__carne__3B75D760">
+      <End Role="tbUsuario" EntitySet="tbUsuario" />
+      <End Role="tbMovimientoCuenta" EntitySet="tbMovimientoCuenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbMovimie__idMov__3E52440B" Association="Self.FK__tbMovimie__idMov__3E52440B">
+      <End Role="tbMovimientoCuenta" EntitySet="tbMovimientoCuenta" />
+      <End Role="tbMovimientoCuentaTracto" EntitySet="tbMovimientoCuentaTracto" />
+    </AssociationSet>
+    <AssociationSet Name="tbOrganismoUsuario" Association="Self.tbOrganismoUsuario">
+      <End Role="tbOrganismo" EntitySet="tbOrganismo" />
+      <End Role="tbUsuario" EntitySet="tbUsuario" />
+    </AssociationSet>
+    <FunctionImport Name="SP_ADDUSERORGANISM">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+      <Parameter Name="miembro" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_Asistente" ReturnType="Collection(String)">
+      <Parameter Name="cedula" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_ASISTENTEPRESTAMO" ReturnType="Collection(ucraeuspModel.SP_CNS_ASISTENTEPRESTAMO_Result)">
+      <Parameter Name="idMov" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_COLCHONES" ReturnType="Collection(ucraeuspModel.SP_CNS_COLCHONES_Result)" />
+    <FunctionImport Name="SP_CNS_COLCHONESPRESTAMO" ReturnType="Collection(ucraeuspModel.SP_CNS_COLCHONESPRESTAMO_Result)">
+      <Parameter Name="idMov" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_COLCHONPORNUMERO" ReturnType="Collection(ucraeuspModel.SP_CNS_COLCHONPORNUMERO_Result)">
+      <Parameter Name="numero" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_COLCHONXNUMERO" ReturnType="Collection(Int32)">
+      <Parameter Name="numero" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Cns_ConsumiblesLimpiezaPorNombre" ReturnType="Collection(ucraeuspModel.Sp_Cns_ConsumiblesLimpiezaPorNombre_Result)">
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_DISPONIBILIDADCOLCHONES" ReturnType="Collection(ucraeuspModel.SP_CNS_DISPONIBILIDADCOLCHONES_Result)">
+      <Parameter Name="disponibilidad" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Cns_EntradasActivas" ReturnType="Collection(ucraeuspModel.Sp_Cns_EntradasActivas_Result)" />
+    <FunctionImport Name="Sp_Cns_EntradasPorFecha" ReturnType="Collection(ucraeuspModel.Sp_Cns_EntradasPorFecha_Result)">
+      <Parameter Name="movimiento" Mode="In" Type="String" />
+      <Parameter Name="fechaInicio" Mode="In" Type="DateTime" />
+      <Parameter Name="fechaSalida" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_IDCOLCHON" ReturnType="Collection(Int32)">
+      <Parameter Name="numColchon" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Cns_InvaAsoPorNombre" ReturnType="Collection(ucraeuspModel.Sp_Cns_InvaAsoPorNombre_Result)">
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Cns_InvActivosAso" ReturnType="Collection(ucraeuspModel.Sp_Cns_InvActivosAso_Result)" />
+    <FunctionImport Name="SP_CNS_MOVIMIENTOSEFECTIVOXFECHA" ReturnType="Collection(ucraeuspModel.SP_CNS_MOVIMIENTOSEFECTIVOXFECHA_Result)">
+      <Parameter Name="fechaI" Mode="In" Type="DateTime" />
+      <Parameter Name="fechaF" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_MOVIMIENTOSTRACTOXFECHA" ReturnType="Collection(ucraeuspModel.SP_CNS_MOVIMIENTOSTRACTOXFECHA_Result)">
+      <Parameter Name="fechaI" Mode="In" Type="DateTime" />
+      <Parameter Name="fechaF" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_MOVTRACTO" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="SP_CNS_ORGANISMOUSUARIO" ReturnType="Collection(String)">
+      <Parameter Name="usuario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_PRESTAMOCOLCHONESXNUMERO" ReturnType="Collection(ucraeuspModel.SP_CNS_PRESTAMOCOLCHONESXNUMERO_Result)">
+      <Parameter Name="numero" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_PRESTAMOSCOLCHONESXCEDULA" ReturnType="Collection(ucraeuspModel.SP_CNS_PRESTAMOSCOLCHONESXCEDULA_Result)">
+      <Parameter Name="cedula" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CNS_USUARIOS" ReturnType="Collection(ucraeuspModel.SP_CNS_USUARIOS_Result)">
+      <Parameter Name="carnet" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DTL_ELIMINARDETALLECOLCHO">
+      <Parameter Name="idAct" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Ins_Movimiento">
+      <Parameter Name="cedula" Mode="In" Type="String" />
+      <Parameter Name="accion" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INS_REGISTRARCOLCHON">
+      <Parameter Name="estado" Mode="In" Type="String" />
+      <Parameter Name="observacion" Mode="In" Type="String" />
+      <Parameter Name="numColchon" Mode="In" Type="Int32" />
+      <Parameter Name="procedencia" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INS_REGISTRARDEVOLUCIONESCOLCHON">
+      <Parameter Name="idActivo" Mode="In" Type="Int32" />
+      <Parameter Name="cantidad" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INS_REGISTRARMOVIMIENTO">
+      <Parameter Name="carnet" Mode="In" Type="String" />
+      <Parameter Name="cedula" Mode="In" Type="String" />
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INS_REGISTRARPRESTAMOSCOLCHON">
+      <Parameter Name="idActivo" Mode="In" Type="Int32" />
+      <Parameter Name="cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="ubicacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ISN_CUENTA">
+      <Parameter Name="idCuent" Mode="In" Type="String" />
+      <Parameter Name="carnetU" Mode="In" Type="String" />
+      <Parameter Name="detalle" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="monto" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ISN_TRACTO">
+      <Parameter Name="idMov" Mode="In" Type="Int32" />
+      <Parameter Name="factura" Mode="In" Type="String" />
+      <Parameter Name="empresa" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OBT_ORGANISMO" ReturnType="Collection(String)">
+      <Parameter Name="carnet" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Cns_FiltroCategoria" ReturnType="Collection(ucraeuspModel.Sp_Cns_FiltroCategoria_Result)">
+      <Parameter Name="filtro" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Cns_FiltroAlimentacion" ReturnType="Collection(ucraeuspModel.Sp_Cns_FiltroAlimentacion_Result)">
+      <Parameter Name="filtro" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ELIMINAR_USUARIO">
+      <Parameter Name="carnet" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_CNS_ASISTENTEPRESTAMO_Result">
+    <Property Type="String" Name="nombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="cedula" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="SP_CNS_COLCHONES_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="CodigoOrganismo" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="Cantidad" Nullable="false" />
+    <Property Type="String" Name="Disponibilidad" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="NumeroColchon" Nullable="false" />
+    <Property Type="String" Name="Procedencia" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_CNS_COLCHONESPRESTAMO_Result">
+    <Property Type="Int32" Name="NumeroColchon" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="SP_CNS_COLCHONPORNUMERO_Result">
+    <Property Type="Int32" Name="numeroColchon" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="Sp_Cns_ConsumiblesLimpiezaPorNombre_Result">
+    <Property Type="Int32" Name="IdConsumible" Nullable="false" />
+    <Property Type="String" Name="CodigoOrganismo" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="CantidadInventario" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_CNS_DISPONIBILIDADCOLCHONES_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="CodigoOrganismo" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="Cantidad" Nullable="false" />
+    <Property Type="String" Name="Disponibilidad" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="NumeroColchon" Nullable="false" />
+    <Property Type="String" Name="Procedencia" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Sp_Cns_EntradasActivas_Result">
+    <Property Type="String" Name="nombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="cedula" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="ultFecha" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sp_Cns_EntradasPorFecha_Result">
+    <Property Type="String" Name="cedulaAsistente" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="nombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="tipo" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="fecha" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Sp_Cns_InvaAsoPorNombre_Result">
+    <Property Type="Int32" Name="idActivo" Nullable="false" />
+    <Property Type="Int32" Name="placa" Nullable="false" />
+    <Property Type="String" Name="codigoOrganismo" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="cantidadTotal" Nullable="false" />
+    <Property Type="Int32" Name="cantidadInventario" Nullable="false" />
+    <Property Type="String" Name="estado" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="observacion" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ubicacion" Nullable="false" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="Sp_Cns_InvActivosAso_Result">
+    <Property Type="Int32" Name="idActivo" Nullable="false" />
+    <Property Type="Int32" Name="placa" Nullable="false" />
+    <Property Type="String" Name="codigoOrganismo" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="cantidadTotal" Nullable="false" />
+    <Property Type="Int32" Name="cantidadInventario" Nullable="false" />
+    <Property Type="String" Name="estado" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="observacion" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ubicacion" Nullable="false" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="SP_CNS_MOVIMIENTOSEFECTIVOXFECHA_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Usuario" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="String" Name="Tipo" Nullable="true" MaxLength="7" />
+    <Property Type="Decimal" Name="Monto" Nullable="true" Precision="9" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SP_CNS_MOVIMIENTOSTRACTOXFECHA_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Usuario" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="String" Name="Tipo" Nullable="true" MaxLength="7" />
+    <Property Type="Decimal" Name="Monto" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="String" Name="Factura" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Empresa" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_CNS_PRESTAMOCOLCHONESXNUMERO_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Cedula" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="String" Name="Ubicacion" Nullable="false" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="SP_CNS_PRESTAMOSCOLCHONESXCEDULA_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Cedula" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="String" Name="Ubicacion" Nullable="false" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="SP_CNS_USUARIOS_Result">
+    <Property Type="String" Name="carnet" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="cedula" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="nombreCompleto" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Sp_Cns_FiltroCategoria_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="Nombre_Consumible" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Cantidad" Nullable="false" />
+    <Property Type="String" Name="Unidad_Medida" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Categoria" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="Sp_Cns_FiltroAlimentacion_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="Nombre_Consumible" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Cantidad" Nullable="false" />
+    <Property Type="String" Name="Unidad_Medida" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Categoria" Nullable="false" MaxLength="25" />
+  </ComplexType>
+</Schema>

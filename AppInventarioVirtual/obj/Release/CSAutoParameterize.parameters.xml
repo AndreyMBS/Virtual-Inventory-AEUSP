@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="AEUSP-Web.config Connection String" description="AEUSP Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/ModelAEUSP.csdl|res://*/ModelAEUSP.ssdl|res://*/ModelAEUSP.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=sql5047.site4now.net;initial catalog=DB_A4F898_AppInventario;persist security info=True;user id=DB_A4F898_AppInventario_admin;password=aeusp1234;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\josue\\Desktop\\AppInventarioVirtual\\AppInventarioVirtual\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AEUSP']/@connectionString" />
+  </parameter>
+  <parameter name="DB_A4F898_AppInventarioConnectionString-Web.config Connection String" description="DB_A4F898_AppInventarioConnectionString Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=sql5047.site4now.net;Initial Catalog=DB_A4F898_AppInventario;Persist Security Info=True;User ID=DB_A4F898_AppInventario_admin;Password=aeusp1234" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\josue\\Desktop\\AppInventarioVirtual\\AppInventarioVirtual\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DB_A4F898_AppInventarioConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

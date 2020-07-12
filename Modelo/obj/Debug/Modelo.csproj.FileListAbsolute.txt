@@ -1,0 +1,14 @@
+C:\Users\José Rodolfo\Desktop\AppInventarioVirtual\Modelo\bin\Debug\Modelo.dll
+C:\Users\José Rodolfo\Desktop\AppInventarioVirtual\Modelo\bin\Debug\Modelo.pdb
+C:\Users\José Rodolfo\Desktop\AppInventarioVirtual\Modelo\obj\Debug\Modelo.dll
+C:\Users\José Rodolfo\Desktop\AppInventarioVirtual\Modelo\obj\Debug\Modelo.pdb
+C:\Users\keily\Downloads\Telegram Desktop\AppInventarioVirtual\Modelo\bin\Debug\Modelo.dll
+C:\Users\keily\Downloads\Telegram Desktop\AppInventarioVirtual\Modelo\bin\Debug\Modelo.pdb
+C:\Users\keily\Downloads\Telegram Desktop\AppInventarioVirtual\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
+C:\Users\keily\Downloads\Telegram Desktop\AppInventarioVirtual\Modelo\obj\Debug\Modelo.dll
+C:\Users\keily\Downloads\Telegram Desktop\AppInventarioVirtual\Modelo\obj\Debug\Modelo.pdb
+C:\Users\josue\Desktop\AppInventarioVirtual\Modelo\bin\Debug\Modelo.dll
+C:\Users\josue\Desktop\AppInventarioVirtual\Modelo\bin\Debug\Modelo.pdb
+C:\Users\josue\Desktop\AppInventarioVirtual\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\josue\Desktop\AppInventarioVirtual\Modelo\obj\Debug\Modelo.dll
+C:\Users\josue\Desktop\AppInventarioVirtual\Modelo\obj\Debug\Modelo.pdb

@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ucraeuspModelStoreContainer" CdmEntityContainer="AEUSP">
+    <EntitySetMapping Name="tbActivo">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbActivo">
+        <MappingFragment StoreEntitySet="tbActivo">
+          <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+          <ScalarProperty Name="codigoOrganismo" ColumnName="codigoOrganismo" />
+          <ScalarProperty Name="cantidadTotal" ColumnName="cantidadTotal" />
+          <ScalarProperty Name="cantidadInventario" ColumnName="cantidadInventario" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbActivoGeneral">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbActivoGeneral">
+        <MappingFragment StoreEntitySet="tbActivoGeneral">
+          <ScalarProperty Name="placa" ColumnName="placa" />
+          <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAsistente">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbAsistente">
+        <MappingFragment StoreEntitySet="tbAsistente">
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbBoletaMedica">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbBoletaMedica">
+        <MappingFragment StoreEntitySet="tbBoletaMedica">
+          <ScalarProperty Name="numeroBoleta" ColumnName="numeroBoleta" />
+          <ScalarProperty Name="cedulaAsistente" ColumnName="cedulaAsistente" />
+          <ScalarProperty Name="carnetUsuario" ColumnName="carnetUsuario" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="tratamiento" ColumnName="tratamiento" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbColchon">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbColchon">
+        <MappingFragment StoreEntitySet="tbColchon">
+          <ScalarProperty Name="numeroColchon" ColumnName="numeroColchon" />
+          <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+          <ScalarProperty Name="procedencia" ColumnName="procedencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbConsumible">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbConsumible">
+        <MappingFragment StoreEntitySet="tbConsumible">
+          <ScalarProperty Name="idConsumible" ColumnName="idConsumible" />
+          <ScalarProperty Name="codigoOrganismo" ColumnName="codigoOrganismo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="inventario" ColumnName="inventario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbConsumibleAlimentacion">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbConsumibleAlimentacion">
+        <MappingFragment StoreEntitySet="tbConsumibleAlimentacion">
+          <ScalarProperty Name="idAlimentacion" ColumnName="idAlimentacion" />
+          <ScalarProperty Name="idConsumible" ColumnName="idConsumible" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="unidadMedida" ColumnName="unidadMedida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbConsumibleSalud">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbConsumibleSalud">
+        <MappingFragment StoreEntitySet="tbConsumibleSalud">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="idConsumible" ColumnName="idConsumible" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCuenta">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbCuenta">
+        <MappingFragment StoreEntitySet="tbCuenta">
+          <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+          <ScalarProperty Name="nombreCuenta" ColumnName="nombreCuenta" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDetalleMovimientoActivos">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbDetalleMovimientoActivos">
+        <MappingFragment StoreEntitySet="tbDetalleMovimientoActivos">
+          <ScalarProperty Name="idMovimiento" ColumnName="idMovimiento" />
+          <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbEstudiante">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbEstudiante">
+        <MappingFragment StoreEntitySet="tbEstudiante">
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="carnet" ColumnName="carnet" />
+          <ScalarProperty Name="carrera" ColumnName="carrera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMovimientoActivo">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbMovimientoActivo">
+        <MappingFragment StoreEntitySet="tbMovimientoActivo">
+          <ScalarProperty Name="idMovimiento" ColumnName="idMovimiento" />
+          <ScalarProperty Name="carnetUsuario" ColumnName="carnetUsuario" />
+          <ScalarProperty Name="cedulaAsistente" ColumnName="cedulaAsistente" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMovimientoAsistencia">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbMovimientoAsistencia">
+        <MappingFragment StoreEntitySet="tbMovimientoAsistencia">
+          <ScalarProperty Name="idMovimiento" ColumnName="idMovimiento" />
+          <ScalarProperty Name="cedulaAsistente" ColumnName="cedulaAsistente" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="accion" ColumnName="accion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMovimientoCuenta">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbMovimientoCuenta">
+        <MappingFragment StoreEntitySet="tbMovimientoCuenta">
+          <ScalarProperty Name="idMovimiento" ColumnName="idMovimiento" />
+          <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+          <ScalarProperty Name="carnetUsuario" ColumnName="carnetUsuario" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMovimientoCuentaTracto">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbMovimientoCuentaTracto">
+        <MappingFragment StoreEntitySet="tbMovimientoCuentaTracto">
+          <ScalarProperty Name="idMovimiento" ColumnName="idMovimiento" />
+          <ScalarProperty Name="numeroFactura" ColumnName="numeroFactura" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbOrganismo">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbOrganismo">
+        <MappingFragment StoreEntitySet="tbOrganismo">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSuministrosBoleta">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbSuministrosBoleta">
+        <MappingFragment StoreEntitySet="tbSuministrosBoleta">
+          <ScalarProperty Name="numeroBoleta" ColumnName="numeroBoleta" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbUsuario">
+      <EntityTypeMapping TypeName="ucraeuspModel.tbUsuario">
+        <MappingFragment StoreEntitySet="tbUsuario">
+          <ScalarProperty Name="carnet" ColumnName="carnet" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VP_CNS_CEDULAS">
+      <EntityTypeMapping TypeName="ucraeuspModel.VP_CNS_CEDULAS">
+        <MappingFragment StoreEntitySet="VP_CNS_CEDULAS">
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VP_CNS_COMISIONES">
+      <EntityTypeMapping TypeName="ucraeuspModel.VP_CNS_COMISIONES">
+        <MappingFragment StoreEntitySet="VP_CNS_COMISIONES">
+          <ScalarProperty Name="carnet" ColumnName="carnet" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VP_CNS_NUMEROCOLCHONESDISPONIBLES">
+      <EntityTypeMapping TypeName="ucraeuspModel.VP_CNS_NUMEROCOLCHONESDISPONIBLES">
+        <MappingFragment StoreEntitySet="VP_CNS_NUMEROCOLCHONESDISPONIBLES">
+          <ScalarProperty Name="numeroColchon" ColumnName="numeroColchon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tbOrganismoUsuario" TypeName="ucraeuspModel.tbOrganismoUsuario" StoreEntitySet="tbOrganismoUsuario">
+      <EndProperty Name="tbOrganismo">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <EndProperty Name="tbUsuario">
+        <ScalarProperty Name="carnet" ColumnName="miembro" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="SP_ADDUSERORGANISM" FunctionName="ucraeuspModel.Store.SP_ADDUSERORGANISM" />
+    <FunctionImportMapping FunctionImportName="SP_CNS_Asistente" FunctionName="ucraeuspModel.Store.SP_CNS_Asistente" />
+    <FunctionImportMapping FunctionImportName="SP_CNS_ASISTENTEPRESTAMO" FunctionName="ucraeuspModel.Store.SP_CNS_ASISTENTEPRESTAMO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.SP_CNS_ASISTENTEPRESTAMO_Result">
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CNS_COLCHONES" FunctionName="ucraeuspModel.Store.SP_CNS_COLCHONES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.SP_CNS_COLCHONES_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CodigoOrganismo" ColumnName="CodigoOrganismo" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Disponibilidad" ColumnName="Disponibilidad" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="NumeroColchon" ColumnName="NumeroColchon" />
+          <ScalarProperty Name="Procedencia" ColumnName="Procedencia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CNS_COLCHONESPRESTAMO" FunctionName="ucraeuspModel.Store.SP_CNS_COLCHONESPRESTAMO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.SP_CNS_COLCHONESPRESTAMO_Result">
+          <ScalarProperty Name="NumeroColchon" ColumnName="NumeroColchon" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CNS_COLCHONPORNUMERO" FunctionName="ucraeuspModel.Store.SP_CNS_COLCHONPORNUMERO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.SP_CNS_COLCHONPORNUMERO_Result">
+          <ScalarProperty Name="numeroColchon" ColumnName="numeroColchon" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CNS_COLCHONXNUMERO" FunctionName="ucraeuspModel.Store.SP_CNS_COLCHONXNUMERO" />
+    <FunctionImportMapping FunctionImportName="Sp_Cns_ConsumiblesLimpiezaPorNombre" FunctionName="ucraeuspModel.Store.Sp_Cns_ConsumiblesLimpiezaPorNombre">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.Sp_Cns_ConsumiblesLimpiezaPorNombre_Result">
+          <ScalarProperty Name="IdConsumible" ColumnName="IdConsumible" />
+          <ScalarProperty Name="CodigoOrganismo" ColumnName="CodigoOrganismo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CantidadInventario" ColumnName="CantidadInventario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CNS_DISPONIBILIDADCOLCHONES" FunctionName="ucraeuspModel.Store.SP_CNS_DISPONIBILIDADCOLCHONES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.SP_CNS_DISPONIBILIDADCOLCHONES_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CodigoOrganismo" ColumnName="CodigoOrganismo" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Disponibilidad" ColumnName="Disponibilidad" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="NumeroColchon" ColumnName="NumeroColchon" />
+          <ScalarProperty Name="Procedencia" ColumnName="Procedencia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_Cns_EntradasActivas" FunctionName="ucraeuspModel.Store.Sp_Cns_EntradasActivas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.Sp_Cns_EntradasActivas_Result">
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="ultFecha" ColumnName="ultFecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_Cns_EntradasPorFecha" FunctionName="ucraeuspModel.Store.Sp_Cns_EntradasPorFecha">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.Sp_Cns_EntradasPorFecha_Result">
+          <ScalarProperty Name="cedulaAsistente" ColumnName="cedulaAsistente" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CNS_IDCOLCHON" FunctionName="ucraeuspModel.Store.SP_CNS_IDCOLCHON" />
+    <FunctionImportMapping FunctionImportName="Sp_Cns_InvaAsoPorNombre" FunctionName="ucraeuspModel.Store.Sp_Cns_InvaAsoPorNombre">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.Sp_Cns_InvaAsoPorNombre_Result">
+          <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+          <ScalarProperty Name="placa" ColumnName="placa" />
+          <ScalarProperty Name="codigoOrganismo" ColumnName="codigoOrganismo" />
+          <ScalarProperty Name="cantidadTotal" ColumnName="cantidadTotal" />
+          <ScalarProperty Name="cantidadInventario" ColumnName="cantidadInventario" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_Cns_InvActivosAso" FunctionName="ucraeuspModel.Store.Sp_Cns_InvActivosAso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.Sp_Cns_InvActivosAso_Result">
+          <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+          <ScalarProperty Name="placa" ColumnName="placa" />
+          <ScalarProperty Name="codigoOrganismo" ColumnName="codigoOrganismo" />
+          <ScalarProperty Name="cantidadTotal" ColumnName="cantidadTotal" />
+          <ScalarProperty Name="cantidadInventario" ColumnName="cantidadInventario" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CNS_MOVIMIENTOSEFECTIVOXFECHA" FunctionName="ucraeuspModel.Store.SP_CNS_MOVIMIENTOSEFECTIVOXFECHA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.SP_CNS_MOVIMIENTOSEFECTIVOXFECHA_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CNS_MOVIMIENTOSTRACTOXFECHA" FunctionName="ucraeuspModel.Store.SP_CNS_MOVIMIENTOSTRACTOXFECHA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.SP_CNS_MOVIMIENTOSTRACTOXFECHA_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Factura" ColumnName="Factura" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CNS_MOVTRACTO" FunctionName="ucraeuspModel.Store.SP_CNS_MOVTRACTO" />
+    <FunctionImportMapping FunctionImportName="SP_CNS_ORGANISMOUSUARIO" FunctionName="ucraeuspModel.Store.SP_CNS_ORGANISMOUSUARIO" />
+    <FunctionImportMapping FunctionImportName="SP_CNS_PRESTAMOCOLCHONESXNUMERO" FunctionName="ucraeuspModel.Store.SP_CNS_PRESTAMOCOLCHONESXNUMERO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.SP_CNS_PRESTAMOCOLCHONESXNUMERO_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CNS_PRESTAMOSCOLCHONESXCEDULA" FunctionName="ucraeuspModel.Store.SP_CNS_PRESTAMOSCOLCHONESXCEDULA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.SP_CNS_PRESTAMOSCOLCHONESXCEDULA_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CNS_USUARIOS" FunctionName="ucraeuspModel.Store.SP_CNS_USUARIOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.SP_CNS_USUARIOS_Result">
+          <ScalarProperty Name="carnet" ColumnName="carnet" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DTL_ELIMINARDETALLECOLCHO" FunctionName="ucraeuspModel.Store.SP_DTL_ELIMINARDETALLECOLCHO" />
+    <FunctionImportMapping FunctionImportName="Sp_Ins_Movimiento" FunctionName="ucraeuspModel.Store.Sp_Ins_Movimiento" />
+    <FunctionImportMapping FunctionImportName="SP_INS_REGISTRARCOLCHON" FunctionName="ucraeuspModel.Store.SP_INS_REGISTRARCOLCHON" />
+    <FunctionImportMapping FunctionImportName="SP_INS_REGISTRARDEVOLUCIONESCOLCHON" FunctionName="ucraeuspModel.Store.SP_INS_REGISTRARDEVOLUCIONESCOLCHON" />
+    <FunctionImportMapping FunctionImportName="SP_INS_REGISTRARMOVIMIENTO" FunctionName="ucraeuspModel.Store.SP_INS_REGISTRARMOVIMIENTO" />
+    <FunctionImportMapping FunctionImportName="SP_INS_REGISTRARPRESTAMOSCOLCHON" FunctionName="ucraeuspModel.Store.SP_INS_REGISTRARPRESTAMOSCOLCHON" />
+    <FunctionImportMapping FunctionImportName="SP_ISN_CUENTA" FunctionName="ucraeuspModel.Store.SP_ISN_CUENTA" />
+    <FunctionImportMapping FunctionImportName="SP_ISN_TRACTO" FunctionName="ucraeuspModel.Store.SP_ISN_TRACTO" />
+    <FunctionImportMapping FunctionImportName="SP_OBT_ORGANISMO" FunctionName="ucraeuspModel.Store.SP_OBT_ORGANISMO" />
+    <FunctionImportMapping FunctionImportName="Sp_Cns_FiltroCategoria" FunctionName="ucraeuspModel.Store.Sp_Cns_FiltroCategoria">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.Sp_Cns_FiltroCategoria_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nombre_Consumible" ColumnName="Nombre_Consumible" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Unidad_Medida" ColumnName="Unidad_Medida" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_Cns_FiltroAlimentacion" FunctionName="ucraeuspModel.Store.Sp_Cns_FiltroAlimentacion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ucraeuspModel.Sp_Cns_FiltroAlimentacion_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nombre_Consumible" ColumnName="Nombre_Consumible" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Unidad_Medida" ColumnName="Unidad_Medida" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ELIMINAR_USUARIO" FunctionName="ucraeuspModel.Store.SP_ELIMINAR_USUARIO" />
+  </EntityContainerMapping>
+</Mapping>

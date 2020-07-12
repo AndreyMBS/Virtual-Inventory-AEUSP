@@ -1,0 +1,43 @@
+﻿<% Session.LCID = 5130; %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ME-Presupuesto.Master.cs" Inherits="AppInventarioVirtual.Site3" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sistemas de Presupuesto</title>
+    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../www/css/estilos.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div>
+            <nav class="navbar nav-pres">
+                <a class="navbar" href="#">
+                     <img src="www/css/img/presupuesto/iconfinder_business_finance_money-03_2784288.png" class="d-inline-block align-top" width="35" height="35" alt="">
+                     Presupuesto</a>
+                <div class="form-inline my-2 my-lg-0">
+                    <img src="www/css/img/logoMe.png" class="d-inline-block align-top" width="60" height="60" alt="" />
+                </div>
+            </nav>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer>
+            <div>
+                <div class="footer-pres footer-copyright text-center py-3 " style="margin-top: auto;">© Comisión de Informática, 2019 </div>
+            </div>
+        </footer>
+
+    </form>
+</body>
+</html>

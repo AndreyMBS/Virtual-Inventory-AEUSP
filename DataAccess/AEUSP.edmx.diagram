@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6768d0a8569b4b86a9c49c272d0f7228" Name="Diagram1">
+        <EntityTypeShape EntityType="ucraeuspModel.tbActivo" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbActivoGeneral" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbAsistente" Width="1.5" PointX="6" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbBoletaMedica" Width="1.5" PointX="5.25" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbColchon" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbConsumible" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbConsumibleAlimentacion" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbConsumibleSalud" Width="1.5" PointX="5.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbCuenta" Width="1.5" PointX="6" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbDetalleMovimientoActivos" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbEstudiante" Width="1.5" PointX="8.25" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbMovimientoActivo" Width="1.5" PointX="8.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbMovimientoAsistencia" Width="1.5" PointX="8.25" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbMovimientoCuenta" Width="1.5" PointX="8.25" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbMovimientoCuentaTracto" Width="1.5" PointX="10.5" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbOrganismo" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbSuministrosBoleta" Width="1.5" PointX="7.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.tbUsuario" Width="1.5" PointX="3" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.VP_CNS_CEDULAS" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.VP_CNS_COMISIONES" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ucraeuspModel.VP_CNS_NUMEROCOLCHONESDISPONIBLES" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbActivo__codigo__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbActivoG__idAct__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbColchon__idAct__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbDetalle__idAct__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbBoletaM__cedul__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbEstudia__cedul__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbMovimie__cedul__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbMovimie__cedul__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbBoletaM__carne__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbSuminis__numer__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbConsumi__codig__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbConsumi__idCon__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbConsumi__idCon__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbSuminis__codig__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbMovimie__idCue__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbDetalle__idMov__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbMovimie__carne__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbMovimie__carne__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.FK__tbMovimie__idMov__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="ucraeuspModel.tbOrganismoUsuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
